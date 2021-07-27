@@ -1,0 +1,14 @@
+language: java
+
+jdk:
+  #- openjdk8
+  #- oraclejdk11
+  - openjdk11
+
+before_script:
+  - chmod +x gradlew
+
+notifications:
+  slack: athenianschool:WQIlB3tRxiHB7N6qoacQGE1n
+  email:
+    - aditshah00@gmail.com
