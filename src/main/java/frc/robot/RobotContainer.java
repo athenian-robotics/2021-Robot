@@ -26,7 +26,6 @@ import frc.robot.commands.climber.RunRightTelescope;
 import frc.robot.commands.climber.RunRightWinch;
 import frc.robot.commands.drive.*;
 import frc.robot.commands.intake.ChangeIntakeMode;
-import frc.robot.commands.intake.ExampleIntake;
 import frc.robot.commands.intake.IntakeBackward;
 import frc.robot.commands.miscellaneous.Abort;
 import frc.robot.commands.miscellaneous.LEDCommand;
@@ -154,7 +153,6 @@ public class RobotContainer {
         xboxSquares.whenPressed(new Abort(shooterSubsystem, drivetrain, intakeSubsystem, colorWheelSubsystem, leftTelescopeSubsystem, rightTelescopeSubsystem, leftWinchSubsystem, rightWinchSubsystem));
 //    xboxA.whenPressed(new AutoRoutine2(drivetrain, shooterSubsystem, intakeSubsystem));
         xboxB.whenPressed(new AutoAngleTurn(drivetrain, 90));
-        xboxA.whenPressed(new ExampleIntake(intakeSubsystem, shooterSubsystem)); //TODO remove
 
         //xboxB.whenPressed(new AutoDriveForwardDistanceCustomTrapezoid(drivetrain, 1));
         //xboxA.whenPressed(new TestAutonomousRoutine(drivetrain, 90, 15, 3.5, 3));
