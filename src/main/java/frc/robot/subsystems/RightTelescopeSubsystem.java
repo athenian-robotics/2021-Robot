@@ -18,7 +18,7 @@ public class RightTelescopeSubsystem extends SubsystemBase {
     }
 
     public void rightTelescopeUp() {
-        if (getEncoderValue() > -170) {
+        if (getEncoderValue() > -175) {
             rightTelescope.set(-0.6);
         } else {
             rightTelescope.set(0);

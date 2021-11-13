@@ -30,6 +30,7 @@ import frc.robot.commands.intake.IntakeBackward;
 import frc.robot.commands.miscellaneous.Abort;
 import frc.robot.commands.miscellaneous.LEDCommand;
 import frc.robot.commands.outtake.DumperCommand;
+import frc.robot.commands.outtake.InvertShooter;
 import frc.robot.commands.outtake.ShootLowGoal;
 import frc.robot.commands.vision.TurnToBall;
 import frc.robot.lib.RobotType;
@@ -163,7 +164,7 @@ public class RobotContainer {
         fightStickA.whenPressed(new ChangeIntakeMode(intakeSubsystem, shooterSubsystem));
         fightStickB.whenPressed(new DumperCommand(shooterSubsystem));
         fightStickX.whenPressed(new ShootLowGoal(shooterSubsystem));
-        //fightStickY.whenHeld(new RunColorWheel(colorWheelSubsystem));
+        fightStickY.whenHeld(new InvertShooter(shooterSubsystem));
 //    fightStickLB.whenHeld(new RunLeftTelescope(leftClimberSubsystem));
 //    fightStickRB.whenHeld(new RunRightTelescope(rightClimberSubsystem));
         fightStickLB.whenHeld(new RunLeftTelescope(leftTelescopeSubsystem));

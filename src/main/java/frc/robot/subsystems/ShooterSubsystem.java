@@ -43,6 +43,13 @@ public class ShooterSubsystem extends SubsystemBase {
 //        solenoidlift.set((DoubleSolenoid.Value.kReverse));
     }
 
+    public void invertShooter() {
+        if (shooterMotor.get() < 0) shooterMotor.set(1.0);
+        else shooterMotor.set(-1.0);
+        System.out.println("Inverting shooter!");
+        isRunning = true;
+    }
+
     public void dumperUp() {
         dumperSolenoid.set(true);
         isUp = true;

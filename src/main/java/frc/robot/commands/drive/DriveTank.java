@@ -31,7 +31,7 @@ public class DriveTank extends CommandBase {
     public void execute() {
 
         drivetrainSubsystem.tankDrive(-xboxController.getY(GenericHID.Hand.kLeft),
-                -xboxController.getY(GenericHID.Hand.kRight));
+                -xboxController.getY(GenericHID.Hand.kRight)); //Set both parameters negative to invert
     }
 
     // Called once the command ends or is interrupted.
