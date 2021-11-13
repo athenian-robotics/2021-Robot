@@ -14,11 +14,11 @@ public class RightWinchSubsystem extends SubsystemBase {
     }
 
     public void rightWinchExtend() {
-        rightWinch.set(0.5);
+        rightWinch.set(0.65);
     }
 
     public void rightWinchRetract() {
-        rightWinch.set(-0.5);
+        rightWinch.set(-0.65);
     }
 
     public void rightWinchStop() {

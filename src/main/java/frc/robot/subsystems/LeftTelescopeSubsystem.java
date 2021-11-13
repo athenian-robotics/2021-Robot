@@ -14,11 +14,12 @@ public class LeftTelescopeSubsystem extends SubsystemBase {
     private final CANEncoder leftTelescopeEncoder = leftTelescope.getEncoder();
 
     public LeftTelescopeSubsystem() {
+        leftTelescopeEncoder.setPosition(0.0);
     }
 
     public void leftTelescopeUp() {
         if (getEncoderValue() > -250) {
-            leftTelescope.set(-0.4);
+            leftTelescope.set(-0.6);
         } else {
             leftTelescope.set(0);
         }
@@ -26,7 +27,7 @@ public class LeftTelescopeSubsystem extends SubsystemBase {
 
     public void leftTelescopeDown() {
         if (getEncoderValue() < 0) {
-            leftTelescope.set(0.4);
+            leftTelescope.set(0.6);
         } else {
             leftTelescope.set(0);
         }

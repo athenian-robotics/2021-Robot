@@ -14,11 +14,12 @@ public class RightTelescopeSubsystem extends SubsystemBase {
     private final CANEncoder rightTelescopeEncoder = rightTelescope.getEncoder();
 
     public RightTelescopeSubsystem() {
+        rightTelescopeEncoder.setPosition(0.0);
     }
 
     public void rightTelescopeUp() {
         if (getEncoderValue() > -250) {
-            rightTelescope.set(-0.4);
+            rightTelescope.set(-0.6);
         } else {
             rightTelescope.set(0);
         }
@@ -26,7 +27,7 @@ public class RightTelescopeSubsystem extends SubsystemBase {
 
     public void rightTelescopeDown() {
         if (getEncoderValue() < 0) {
-            rightTelescope.set(0.4);
+            rightTelescope.set(0.6);
         } else {
             rightTelescope.set(0);
         }
