@@ -111,12 +111,29 @@ public class DrivetrainSubsystem extends SubsystemBase {
         drive.tankDrive(leftPower, rightPower);
     }
 
+    public void tankTurn(double leftSpeed, double rightSpeed, long timeToTurn) {
+        int leftSign = leftSpeed >= 0 ? 1 : -1;
+        int rightSign = rightSpeed >= 0 ? 1 : -1;
+
+        double leftPower = ((speedScale - minDrivePowerTurn) * Math.abs(leftSpeed) + minDrivePowerTurn) * leftSign;
+        double rightPower = ((speedScale - minDrivePowerTurn) * Math.abs(rightSpeed) + minDrivePowerTurn) * rightSign;
+
+        drive.tankDrive(leftPower, rightPower);
+        try {
+            Thread.sleep(timeToTurn);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        drive.stopMotor();
+    }
+
     public void arcadeDrive(double xSpeed, double zRotation) {
         //drive.arcadeDrive(xSpeed*maxDriverSpeed, -zRotation*maxDriverSpeed);
 
         //account for changes in turning when the forward direction changes, if it doesn't work use the one above
         drive.arcadeDrive(xSpeed * maxDriverSpeed, maxDriverSpeed < 0 ? zRotation * maxDriverSpeed : -zRotation * maxDriverSpeed);
     }
+
 
     public double getLeftEncoderDistance() {
         return leftEncoder.getDistance();
