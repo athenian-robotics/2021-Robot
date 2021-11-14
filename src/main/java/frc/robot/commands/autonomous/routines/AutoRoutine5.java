@@ -18,7 +18,7 @@ public class AutoRoutine5 extends SequentialCommandGroup {
         addCommands(
                 new AutoIntakeOn(intake),
                 new AutoForwardDistance(drivetrain, 6),
-                new AutoTimerDelay(),
+                new AutoTimerDelay(0.5),
                 new AutoForwardDistance(drivetrain, -4),
                 new AutoIntakeOff(intake)
         );
