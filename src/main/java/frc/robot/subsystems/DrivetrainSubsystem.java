@@ -4,10 +4,7 @@ import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
 import com.kauailabs.navx.frc.AHRS;
 import com.revrobotics.CANSparkMax;
-import edu.wpi.first.wpilibj.AnalogPotentiometer;
-import edu.wpi.first.wpilibj.Encoder;
-import edu.wpi.first.wpilibj.SerialPort;
-import edu.wpi.first.wpilibj.SpeedControllerGroup;
+import edu.wpi.first.wpilibj.*;
 import edu.wpi.first.wpilibj.controller.PIDController;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj.geometry.Pose2d;
@@ -119,11 +116,7 @@ public class DrivetrainSubsystem extends SubsystemBase {
         double rightPower = ((speedScale - minDrivePowerTurn) * Math.abs(rightSpeed) + minDrivePowerTurn) * rightSign;
 
         drive.tankDrive(leftPower, rightPower);
-        try {
-            Thread.sleep(timeToTurn);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        Timer.delay(timeToTurn/1000);
         drive.stopMotor();
     }
 
