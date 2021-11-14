@@ -41,18 +41,21 @@ public class AutoRoutine6Base extends CommandBase {
             }
             count2++;
         }
+        // replace above with encoder stuff
+
         // PID
         pid.setSetpoint(0);
-        pid.setTolerance(.05);
-        pid.enableContinuousInput(0, 1);
+        pid.setTolerance(750);
+        pid.enableContinuousInput(0, 10_000);
+        drivetrain.resetEncoders();
     }
 
     public void execute() {
         counter++;
         if (vals[3] < 0) {
-            drivetrain.tankTurn(-1, 1, MathUtil.clamp(pid.calculate(-vals[3]), 0, 1));
+            drivetrain.tankTurn(-1, 1, (long) MathUtil.clamp(pid.calculate(-vals[3]), 0, 10000));
         } else {
-            drivetrain.tankTurn(1, -1, MathUtil.clamp(pid.calculate(vals[3]), 0, 1));
+            drivetrain.tankTurn(1, -1, (long) MathUtil.clamp(pid.calculate(vals[3]), 0, 10000));
         }
         vals = limelight.grabValues();
     }
@@ -65,7 +68,7 @@ public class AutoRoutine6Base extends CommandBase {
     }
     public void end() {
         // go forward until close to low goal n shoot
-        new AutoRoutine1(drivetrain, shooter, intake);
+
         // new AutoRoutine6(drivetrain, intake, shooter, limelight);
     }
 
