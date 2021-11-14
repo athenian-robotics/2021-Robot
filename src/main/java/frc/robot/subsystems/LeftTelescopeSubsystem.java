@@ -18,16 +18,16 @@ public class LeftTelescopeSubsystem extends SubsystemBase {
     }
 
     public void leftTelescopeUp() {
-        if (getEncoderValue() > -175) {
-            leftTelescope.set(-0.6);
+        if (getEncoderValue() < 175) {
+            leftTelescope.set(0.6);
         } else {
             leftTelescope.set(0);
         }
     }
 
     public void leftTelescopeDown() {
-        if (getEncoderValue() < 0) {
-            leftTelescope.set(0.6);
+        if (getEncoderValue() > 0) {
+            leftTelescope.set(-0.6);
         } else {
             leftTelescope.set(0);
         }

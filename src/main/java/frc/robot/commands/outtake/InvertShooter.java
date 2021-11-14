@@ -27,6 +27,6 @@ public class InvertShooter extends CommandBase {
 
     @Override
     public void end(boolean interrupted) {
-
+        shooter.stopShooter();
     }
 }

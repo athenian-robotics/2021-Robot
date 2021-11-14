@@ -45,7 +45,7 @@ public class ShooterSubsystem extends SubsystemBase {
 
     public void invertShooter() {
         if (shooterMotor.get() < 0) shooterMotor.set(1.0);
-        else shooterMotor.set(-1.0);
+        else shooterMotor.set(-0.25);
         System.out.println("Inverting shooter!");
         isRunning = true;
     }
