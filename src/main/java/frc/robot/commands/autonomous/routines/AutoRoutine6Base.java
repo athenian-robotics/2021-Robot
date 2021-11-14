@@ -30,6 +30,7 @@ public class AutoRoutine6Base extends CommandBase {
     @Override
     public void initialize() {
         new AutoRoutine5(drivetrain, intake);
+        limelight.grabNetworkTable().getEntry("pipeline").setNumber(0);
         int count2 = 0;
         // while find low goal retro reflector not true, spinny boi
         while (vals[0] == 0) {
