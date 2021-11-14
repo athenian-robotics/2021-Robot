@@ -96,6 +96,7 @@ public class RobotContainer {
         chooser.addOption("3: GrabTwoStraightShoot", new AutoRoutine3(drivetrain, shooterSubsystem, intakeSubsystem));
         chooser.addOption("4: GrabTwoTrenchShoot", new AutoRoutine4(drivetrain, shooterSubsystem, intakeSubsystem));
         chooser.addOption("5: DriveForwardTrench", new AutoRoutine5(drivetrain, intakeSubsystem));
+        chooser.addOption("6: DriveForwardTrenchShootLowGoal", new AutoRoutine6(drivetrain, intakeSubsystem, shooterSubsystem, limeLightSubsystem));
 
 
         //  CommandScheduler.getInstance().registerSubsystem(colorWheelSubsystem, shooterSubsystem);

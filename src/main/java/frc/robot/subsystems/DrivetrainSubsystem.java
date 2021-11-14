@@ -102,11 +102,15 @@ public class DrivetrainSubsystem extends SubsystemBase {
 
     //tank drive for turning autonomous commands
     public void tankDriveTurn(double leftSpeed, double rightSpeed) {
+        tankTurn(leftSpeed, rightSpeed, minDrivePowerTurn);
+    }
+
+    public void tankTurn(double leftSpeed, double rightSpeed, double amountToTurn) {
         int leftSign = leftSpeed >= 0 ? 1 : -1;
         int rightSign = rightSpeed >= 0 ? 1 : -1;
 
-        double leftPower = ((speedScale - minDrivePowerTurn) * Math.abs(leftSpeed) + minDrivePowerTurn) * leftSign;
-        double rightPower = ((speedScale - minDrivePowerTurn) * Math.abs(rightSpeed) + minDrivePowerTurn) * rightSign;
+        double leftPower = ((speedScale - minDrivePowerTurn) * Math.abs(leftSpeed) + amountToTurn) * leftSign;
+        double rightPower = ((speedScale - minDrivePowerTurn) * Math.abs(rightSpeed) + amountToTurn) * rightSign;
 
         drive.tankDrive(leftPower, rightPower);
     }
