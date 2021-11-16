@@ -52,7 +52,7 @@ import static frc.robot.lib.controllers.FightStick.*;
  * (including subsystems, commands, and button mappings) should be declared here.
  */
 public class RobotContainer {
-    private static final RobotType ROBOT_TYPE = RobotType.OFFICIAL;
+    private static final RobotType ROBOT_TYPE = RobotType.KITBOT;
     public static JoystickButton xboxA;
     public static JoystickButton xboxB;
     public static JoystickButton xboxX;

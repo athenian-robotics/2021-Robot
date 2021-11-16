@@ -22,26 +22,28 @@ public final class Constants {
     public static final class DriveConstants {
 
         /**
-         * Change these to 0, 1, 2, 3 if they aren't there
+         * Change these to
+         * 0, 1, 2, 3 if FOR KITBOT
+         * 9 10 11 12 FOR OFFICIAL
          */
-        public static final int leftMotor1Port = 9;
-        public static final int leftMotor2Port = 10;
-        public static final int rightMotor1Port = 11;
-        public static final int rightMotor2Port = 12;
+        public static final int leftMotor1Port = 0;
+        public static final int leftMotor2Port = 1;
+        public static final int rightMotor1Port = 2;
+        public static final int rightMotor2Port = 3;
 
         public static final int encoderLeftA = 1;
         public static final int encoderLeftB = 2;
         public static final int encoderRightA = 5;
         public static final int encoderRightB = 6;
-        public static final double speedScale = 0.85; //0.8
+        public static final double speedScale = 0.8; //0.85 FOR OFFICIAL
 
 
         public static final double EncoderDistancePerPulse = 1.0 / 2048.0;
-        public static final double minDrivePower = 0.20; //0.16, 20
+        public static final double minDrivePower = 0.1; //0.16, 20
 
-        public static final double minDrivePowerTurn = 0.36; //0.35, 40
+        public static final double minDrivePowerTurn = 0.35; //0.35, 40
 
-        public static final double maxDriveSpeed = 0.9; //0.8
+        public static final double maxDriveSpeed = 0.3; //0.8
 
     }
 

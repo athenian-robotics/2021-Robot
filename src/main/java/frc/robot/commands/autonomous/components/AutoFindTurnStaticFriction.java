@@ -1,19 +1,19 @@
-package frc.robot.commands.autonomous;
+package frc.robot.commands.autonomous.components;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.DrivetrainSubsystem;
 
-public class AutoFindStaticFriction extends CommandBase {
+public class AutoFindTurnStaticFriction extends CommandBase {
     private final DrivetrainSubsystem drive;
     double power = 0.01;
 
-    public AutoFindStaticFriction(DrivetrainSubsystem drive) {
+    public AutoFindTurnStaticFriction(DrivetrainSubsystem drive) {
         this.drive = drive;
     }
 
     public void execute() {
         System.out.println("Initialize");
-        drive.drive.tankDrive(power, power);
+        drive.drive.tankDrive(power, -power);
         power += 0.0002;
         System.out.println(power);
     }

@@ -1,10 +1,7 @@
 package frc.robot.commands.autonomous.routines;
 
 import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
-import frc.robot.commands.autonomous.components.AutoDriveForwardUltrasonic;
-import frc.robot.commands.autonomous.components.AutoDumperUp;
-import frc.robot.commands.autonomous.components.AutoForwardDistance;
-import frc.robot.commands.autonomous.components.AutoShooterTime;
+import frc.robot.commands.autonomous.components.*;
 import frc.robot.subsystems.DrivetrainSubsystem;
 import frc.robot.subsystems.IntakeSubsystem;
 import frc.robot.subsystems.ShooterSubsystem;
